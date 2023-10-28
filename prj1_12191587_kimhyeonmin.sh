@@ -94,20 +94,8 @@ function func7() {
   read -p "${MSG[7]}" userId
 
   movies=$(awk -v userId=$userId '
-    BEGIN {
-      res = ""
-      first = 1
-    }
     $1 == userId {
-      if (first == 1) {
-        res = $2
-        first = 0
-      } else {
-        res = res "\n" $2
-      }
-    }
-    END {
-      print res
+      print $2
     }' u.data | sort -n | uniq)
 
   echo $movies | tr " " "|"
