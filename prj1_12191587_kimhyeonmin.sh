@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 # data
@@ -150,7 +150,7 @@ function func8() {
 
 
 # welcome message
-echo $PROFILE; echo $USAGE
+echo -e $PROFILE; echo -e $USAGE
 
 
 # body of program
