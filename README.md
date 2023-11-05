@@ -4,7 +4,9 @@
 # 실행 방법
 ```
 cd PATH-TO-SCRIPT-FILE
-./[filename].sh
+(bash 쉘) (스크립트 파일명)
+
+예: /bin/bash prj1_12191587_kimhyeonmin.sh
 ```
 
 # 구현 내용
@@ -44,7 +46,8 @@ done
 ---
 
 ## Get the data of the movie identified by a specific 'movie id' from 'u.item'
-```
+
+```bash
 function func1() {
   read -p "${MSG[1]}" movieId
 
@@ -58,7 +61,8 @@ function func1() {
 스크립트는 1번 필드가 movieId와 같은 라인을 출력합니다.
 
 ## Get the data of ‘action’ genre movies from 'u.item’
-```
+
+```bash
 function func2() {
   read -p "${MSG[2]}" choice
 
@@ -84,7 +88,8 @@ function func2() {
 스크립트는 7번 필드가 1인 라인, 즉 액션 장르의 영화에 대한 라인을 출력합니다. 단, 10번째 출력 이후 `cnt < 10` 조건을 만족하지 않아 최대 10개 까지만 출력하게 됩니다.
 
 ## Get the average 'rating’ of the movie identified by specific 'movie id' from 'u.data’
-```
+
+```bash
 function func3() {
   read -p "${MSG[3]}" movieId
 
@@ -110,7 +115,8 @@ function func3() {
 스크립트는 2번 필드(movie id)가 movieId와 일치하는 필드에 대해, 3번 필드(rating)의 합과 평점의 개수를 계산합니다. 마지막으로 평균 평점을 반올림하여 소수점 5째 자리까지 출력합니다.
 
 ## Delete the ‘IMDb URL’ from ‘u.item’
-```
+
+```bash
 function func4() {
   read -p "${MSG[4]}" choice
 
@@ -127,7 +133,8 @@ function func4() {
 스크립트는 정규표현식 `[^|]*|`을 5번째로 만족하는 부분(즉 "IMDb URL|")을 `|`로 치환하여 IMDb URL을 삭제한 것과 동일한 결과를 출력합니다.
 
 ## Get the data about users from 'u.user’
-```
+
+```bash
 function func5() {
   read -p "${MSG[5]}" choice
 
@@ -146,7 +153,8 @@ head와 -n 옵션을 활용해 파일 u.user의 처음 10라인을 다음 sed �
 마지막 스크립트는 정규표현식 `[^|]*|`과 매칭되는 5개의 subexpression을 구하고, 요구한 형식에 맞추어 출력합니다.
 
 ## Modify the format of 'release date' in 'u.item’
-```
+
+```bash
 function func6() {
   read -p "${MSG[6]}" choice
 
@@ -168,7 +176,8 @@ tail과 -n 옵션을 활용해 파일 u.item의 마지막 10라인을 다음 sed
 마지막 스크립트는 정규표현식을 활용해 (날짜 표기의 이전 부분)(일)-(월)-(연)(날짜 표기의 이후 부분) 5개의 subexpression을 구하고, 불필요한 `-`는 삭제한 뒤 요구사항에 따라 (연)(월)(일) 순서로 바꾸어 출력합니다.
 
 ## Get the data of movies rated by a specific 'user id' from 'u.data'
-```
+
+```bash
 function func7() {
   read -p "${MSG[7]}" userId
 
@@ -210,7 +219,8 @@ u.item을 읽기 시작하면, 1번 필드(movie id)가 check의 유효한 key�
 마지막으로 더 이상 임시파일은 필요하지 않으므로 삭제합니다.
 
 ## Get the average 'rating' of movies rated by users with 'age' between 20 and 29 and 'occupation' as 'programmer'
-```
+
+```bash
 function func8() {
   read -p "${MSG[8]}" choice
 
