@@ -245,7 +245,7 @@ function func8() {
 
 users 변수는 파일 u.user에서 2번 필드(age)가 20 이상 30 미만이며 4번 필드(occupation)가 `programmer`와 일치하는 라인의 user id를 출력한 내용과 같습니다.
 
-위 내용은 `bash 3.2` 기준 공백으로 구분되어 있으므로, tr을 활용해 공백을 `|`로 변환하여 임시 파일 `.prj1_temp`에 저장합니다.
+위 내용은 `bash 3.2` 기준 공백으로 구분되어 있으므로, tr을 활용해 공백을 `\n`로 변환하여 임시 파일 `.prj1_temp`에 저장합니다.
 
 마지막 awk 스크립트는 `.prj1_temp`와 `u.data`를 입력으로 받습니다.
 
